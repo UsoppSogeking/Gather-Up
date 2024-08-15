@@ -5,7 +5,7 @@ const { swaggerDocs } = require('../swagger');
 
 const authRoutes = require('./routes/authRoutes');
 const userRoutes = require('./routes/userRoutes');
-// const eventRoutes = require('./routes/eventsRoutes');
+const eventRoutes = require('./routes/eventsRoutes');
 
 const app = express();
 app.use(express.json());
@@ -25,7 +25,7 @@ try {
 
 app.use("/", authRoutes);
 app.use("/", userRoutes);
-// app.use("/", eventRoutes);
+app.use("/", eventRoutes);
 
 const port = process.env.PORT || 3000;
 swaggerDocs(app, port);
