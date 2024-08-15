@@ -25,4 +25,4 @@ function swaggerDocs(app, port) {
     console.log(`Documentação da API disponível em http://localhost:${port}/docs`);
 }
 
-module.exports = { swaggerDocs, swaggerSpec };
+module.exports = { swaggerDocs };
