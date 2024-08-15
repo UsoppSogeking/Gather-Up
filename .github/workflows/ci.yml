@@ -33,6 +33,8 @@ jobs:
           echo "DB_PASSWORD=${{ secrets.DB_PASSWORD }}" >> $GITHUB_ENV
           echo "DB_HOST=${{ secrets.DB_HOST }}" >> $GITHUB_ENV
           echo "DB_USER=${{ secrets.DB_USER }}" >> $GITHUB_ENV
+          echo "JWT_SECRET=${{ secrets.JWT_SECRET }}" >> $GITHUB_ENV
+          echo "NODE_ENV=test" >> $GITHUB_ENV
 
       - name: Run tests
         run: npm run test
