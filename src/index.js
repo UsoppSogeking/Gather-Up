@@ -1,9 +1,10 @@
 const express = require('express');
 const cors = require('cors');
 const sequelize = require('./database/config');
+const { swaggerDocs } = require('../swagger');
 
 const authRoutes = require('./routes/authRoutes');
-// const userRoutes = require('./routes/userRoutes');
+const userRoutes = require('./routes/userRoutes');
 // const eventRoutes = require('./routes/eventsRoutes');
 
 const app = express();
@@ -23,10 +24,12 @@ try {
 }
 
 app.use("/", authRoutes);
-// app.use("/", userRoutes);
+app.use("/", userRoutes);
 // app.use("/", eventRoutes);
 
 const port = process.env.PORT || 3000;
+swaggerDocs(app, port);
+
 if (process.env.NODE_ENV !== 'test') {
     app.listen(port, () => {
         console.log(`Example app listening on port ${port}`);
