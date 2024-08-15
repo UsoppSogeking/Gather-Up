@@ -1,4 +1,16 @@
 {
+  "name": "gatherup",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "dev": "nodemon src/index.js",
+    "migrate": "sequelize db:migrate"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.1",
     "cors": "^2.8.5",
@@ -14,18 +26,6 @@
     "sequelize": "^6.37.3",
     "supertest": "^7.0.0"
   },
-  "name": "gather-up",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "jest",
-    "dev": "nodemon src/index.js",
-    "migrate": "sequelize db:migrate"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "devDependencies": {
     "sequelize-cli": "^6.6.2"
   }
