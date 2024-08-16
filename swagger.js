@@ -5,13 +5,13 @@ const options = {
     definition: {
         openapi: '3.0.0',
         info: {
-            title: 'GatherUp',
+            title: 'Gather-up',
             version: '1.0.0',
             description: 'API de gerenciamento de eventos.',
         },
         servers: [
             {
-                url: 'http://localhost:3000',
+                url: 'https://gather-up.onrender.com',
             },
         ],
     },
@@ -22,7 +22,7 @@ const swaggerSpec = swaggerJSDoc(options);
 
 function swaggerDocs(app, port) {
     app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
-    console.log(`Documentação da API disponível em http://localhost:${port}/docs`);
+    console.log(`Documentação da API disponível em https://gather-up.onrender.com/docs`);
 }
 
 module.exports = { swaggerDocs };
